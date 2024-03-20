@@ -1,5 +1,5 @@
-import { Router } from 'express';
-const router = Router();
+var express = require('express');
+var router = express.Router();
 
 const mathFunctions = [
   Math.round,
@@ -22,4 +22,4 @@ router.get('/computation', function(req, res, next) {
   res.send(response);
 });
 
-export default router;
+module.exports = router;
