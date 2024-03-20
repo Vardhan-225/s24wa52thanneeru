@@ -1,12 +1,11 @@
-const express = require('express');
-const router = express.Router();
+import { Router } from 'express';
+const router = Router();
 
 const mathFunctions = [
   Math.round,
   Math.random,
   Math.fround,
 ];
-
 
 router.get('/computation', function(req, res, next) {
     
@@ -23,4 +22,4 @@ router.get('/computation', function(req, res, next) {
   res.send(response);
 });
 
-module.exports = router;
+export default router;
