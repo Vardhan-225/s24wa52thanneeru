@@ -1,25 +1,19 @@
 var express = require('express');
 var router = express.Router();
 
-const mathFunctions = [
-  Math.round,
-  Math.random,
-  Math.fround,
-];
+router.get('/', function(req, res, next) {
+    var a = Math.random() * 150;
+    var b = Math.random() * 250;
+    var c = Math.random() * 300;
 
-router.get('/computation', function(req, res, next) {
-    
-  const lastDigit = parseInt('569652'.slice(-1));
+    var funcOne = Math.fround(a);
+    var funcTwo = Math.random();
+    var funcThree = Math.round(c);
 
-  const mathFunction = mathFunctions[lastDigit % mathFunctions.length];
-
-  const value = req.query.x ? parseFloat(req.query.x) : Math.random() * 100;
-
-  const result = mathFunction(value);
-
-  const response = `${mathFunction.name} applied to ${value} is ${result}`;
-
-  res.send(response);
+    res.send(`Random no's are ${a}, ${b} and ${c} <br>
+    Math.fround applied to ${a} is ${funcOne} <br>
+    Math.random applied to ${b} is ${funcTwo} <br>
+    Math.round applied to ${c} is ${funcThree}`);
 });
 
 module.exports = router;
