@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
     var c = Math.random() * 300;
 
     var funcOne = Math.fround(a);
-    var funcTwo = Math.random(b);
+    var funcTwo = Math.random();
     var funcThree = Math.round(c);
 
     res.send(`Random no's are ${a}, ${b} and ${c} <br>
